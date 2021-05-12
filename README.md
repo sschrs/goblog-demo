@@ -1,1 +1,1 @@
-# goweb-blog
+# goblog-demo

@@ -1,5 +1,4 @@
 FROM golang:alpine3.12
-WORKDIR /go/src/goblog
+WORKDIR /go/src/goweb
 COPY . .
-CMD ["/go/src/goblog/goblog"]
-
+CMD ["/go/src/goweb/goblog"]
