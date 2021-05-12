@@ -1,0 +1,34 @@
+{{ define "content" }}
+<h1>
+  Yeni Post Ekle
+  <a href="/admin" class="btn btn-outline-primary float-right"><i class="fa fa-arrow-left"></i> Geri Dön</a>
+</h1>
+<hr>
+<form action="/admin/add" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label>Blog Başlığı</label>
+    <input type="text" name="blog-title" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Blog Açıklaması</label>
+    <textarea name="blog-desc" cols="30" rows="2" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Kategori</label>
+    <select name="blog-category" class="form-control" >
+      {{ range $index,$value := .Categories }}
+      <option value="{{ $value.ID }}">{{ $value.Title }}</option>
+      {{ end }}
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Blog Görseli</label>
+    <input type="file" name="blog-picture" class="form-control-file">
+  </div>
+  <div class="form-group">
+    <label>Blog İçeriği</label>
+    <textarea name="blog-content" id="summernote" cols="30" rows="2" class="form-control"></textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-success w-100 my-3">Kaydet</button>
+</form>
+{{ end }}

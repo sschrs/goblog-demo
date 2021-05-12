@@ -1,0 +1,13 @@
+{{ define "index" }}
+<!DOCTYPE html>
+<html lang="en">
+{{ template "head" }}
+    <body>
+{{ template "navbar" }}
+{{ template "content" . }}
+        <hr />
+{{ template "footer" }}
+       {{ template "scripts" }}
+    </body>
+</html>
+{{ end }}
